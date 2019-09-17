@@ -2,7 +2,6 @@
 
 body {
   background: url("wallpaper-pokemon.jpg");
-  background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
   background-size:100%;
@@ -15,10 +14,8 @@ body {
   font-family: 'Imprima', sans-serif;
 
 }
-
 .logoPokemon {
-  width: 410px;
-  height: 150px;
+  width: 100%;
 }
 
 #pageTitle {
@@ -27,10 +24,13 @@ body {
 
 #buttons {
   padding-bottom: 30px;
+  justify-content: center;
 }
 
 #showComboBox {
   padding-bottom: 30px;
+  justify-content: center;
+
 }
 
 #filters {

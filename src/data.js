@@ -1,11 +1,6 @@
-// esta é uma função de exemplo
-// veja como agregamos a função ao objeto global window
-
-
-
-// const example = () => {
-//
-//   return "example";
-// };
-//
-// window.example = example;
+function filterByPokedex(data,condition) {
+    return data.filter(item => item.type.includes(condition));
+}
+const app = {
+    filterByPokedex
+}

@@ -1,11 +1,14 @@
 document.getElementById("pokemon-btn").addEventListener("click", changeTitleToPokemon);
 document.getElementById("eggs-btn").addEventListener("click", changeTitleToEggs);
 
+const data = POKEMON.pokemon;
+const showPokemons = app.filterByPokedex(data, filters.value);
+
 function changeTitleToPokemon() {
-  document.getElementById("showComboBox").innerHTML= '<select id="filters"><option value="0">Pokedéx</option><option value="1">Ordem Alfabética</option></select>';
+  document.getElementById("showComboBox").innerHTML = '<select id="filters"><option value="num">Pokedéx</option><option value="name">Ordem Alfabética</option></select>';
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
-  document.getElementById("buttons").innerHTML ="";
-  POKEMON.pokemon.forEach((element) => {
+  document.getElementById("buttons").innerHTML = "";
+  data.forEach((element) => {
     let name = document.createElement("div");
     name.innerHTML = element.name;
 
@@ -22,14 +25,16 @@ function changeTitleToPokemon() {
     card.appendChild(num);
 
     document.getElementById("listById").appendChild(card).innerHTML;
+
   }
-)}
+  )
+}
 
 function changeTitleToEggs() {
-  document.getElementById("showComboBox").innerHTML= '<select id="filters"><option value="0">2 km</option><option value="1">5 km</option><option value="2">10 km</option></select>';
+  document.getElementById("showComboBox").innerHTML = '<select id="filters"><option value="0">2 km</option><option value="1">5 km</option><option value="2">10 km</option></select>';
   document.getElementById("pageTitle").innerHTML = "OVOS";
-  document.getElementById("buttons").innerHTML= "";
-  POKEMON.pokemon.forEach((element) => {
+  document.getElementById("buttons").innerHTML = "";
+  data.forEach((element) => {
     let egg = document.createElement("div");
     egg.innerHTML = element.egg;
 
@@ -51,4 +56,5 @@ function changeTitleToEggs() {
 
     document.getElementById("listById").appendChild(card).innerHTML;
   }
-)}
+  )
+}
