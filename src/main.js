@@ -1,6 +1,7 @@
 document.getElementById("pokemon-btn").addEventListener("click", changeTitleToPokemon);
 document.getElementById("eggs-btn").addEventListener("click", changeTitleToEggs);
 
+//função que muda os elementos do HTML após clicar no botão "Pokémons"
 function changeTitleToPokemon() {
   document.getElementById("showComboBox").innerHTML = '<select id="filters"><option value="num">Pokedéx</option><option value="name">Ordem Alfabética</option></select>';
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
@@ -10,6 +11,7 @@ function changeTitleToPokemon() {
   });
 }
 
+//função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
 function changeTitleToEggs() {
   document.getElementById("showComboBox").innerHTML = '<select id="eggFilters"><option value="none">Selecione uma kilometragem</option><option value="2 km">2 km</option><option value="5 km">5 km</option><option value="10 km">10 km</option></select>';
   document.getElementById("pageTitle").innerHTML = "OVOS";
@@ -17,9 +19,10 @@ function changeTitleToEggs() {
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-eggFilters.addEventListener ("change", minhaFuncao);
+eggFilters.addEventListener ("change", filterEggsByKm);
 }
 
+//função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
 function newCards (filteredEggs){
   document.getElementById("listById").innerHTML = "";
   filteredEggs.forEach((item) => {
@@ -27,6 +30,7 @@ function newCards (filteredEggs){
   });
 }
 
+//função de criar os cards (novas <div>)
 function createDivs(element, divType){
   let name = document.createElement("div");
   name.innerHTML = element.name;
