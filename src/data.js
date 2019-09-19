@@ -1,21 +1,14 @@
-const showPokemons = {
-  filterByPokedex:filterByPokedex
-};
-
-function filterByPokedex() {
-  data.forEach((element) => {
-
-  name.innerHTML = element.name;
-
-  img.src = element.img;
-
-  num.innerHTML = "Pokedéx: " + element.num;
-
-  card.className = "pokemonCard";
-  card.appendChild(img);
-  card.appendChild(name);
-  card.appendChild(num);
+const data = POKEMON.pokemon;
+const app = {
+  filterByPokedex
 }
 
+function filterByPokedex(data, condition) {
+  return data.filter(item => item.type.includes(condition));
+}
 
-)}
+function minhaFuncao(e) {
+  const valor = e.target.value;
+  console.log(valor);
+  newCards(data.filter(item => item.egg.includes(valor)));
+}

@@ -12,11 +12,9 @@ body {
   margin-right: 120px;
   font-family: 'Imprima', sans-serif;
 }
-
 .logoPokemon {
   width: 100%;
   justify-content: center;
-
 }
 
 #pageTitle {
@@ -30,6 +28,8 @@ body {
 
 #showComboBox {
   padding-bottom: 30px;
+  justify-content: center;
+
 }
 
 #filters {
