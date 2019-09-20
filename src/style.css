@@ -75,6 +75,9 @@ body {
   padding: 10px;
   margin-bottom: 20px;
 }
+.pokemonCard:hover{
+    background-color: #5CA3E0;
+}
 
 .pokemonEgg{
   border: 2px solid #5CA3E0;
@@ -82,7 +85,11 @@ body {
   padding: 10px;
   margin-bottom: 20px;
 }
+.pokemonEgg:hover{
+  background-color: #5CA3E0;
+}
 
-.pokemonCard:hover{
-    background-color: #5CA3E0;
+
+.pokeImg {
+  width: 60%;
 }

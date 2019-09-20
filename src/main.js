@@ -50,14 +50,15 @@ function createDivs(element, divType){
   card.appendChild(img);
   card.appendChild(name);
   card.appendChild(num);
+  //adiciona o evento de clique nos cards, chamando a função que leva para a interface com info de cada pokemon
   document.getElementById("listById").appendChild(card).innerHTML;
   card.addEventListener("click", () => {
-    seila(element);
+    eachPokemon(element);
   });
 };
 
 //função que traz a interface com informações de cada pokemon que for clicado
-function seila (pokemonData) {
+function eachPokemon (pokemonData) {
   document.getElementById("pageTitle").innerHTML = pokemonData.name;
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("showComboBox").innerHTML = "";
