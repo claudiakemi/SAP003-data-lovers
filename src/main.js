@@ -41,6 +41,7 @@ function createDivs(element, divType){
   let card = document.createElement("div");
   if (divType == "withEgg"){
     card.className = "pokemonEgg";
+  data.forEach((element) => {
     let egg = document.createElement("div");
     egg.innerHTML = element.egg;
     card.appendChild(egg);
@@ -51,4 +52,5 @@ function createDivs(element, divType){
   card.appendChild(name);
   card.appendChild(num);
   document.getElementById("listById").appendChild(card).innerHTML;
+  )
 }
