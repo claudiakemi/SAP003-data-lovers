@@ -1,6 +1,9 @@
-function filterByPokedex(data,condition) {
-    return data.filter(item => item.type.includes(condition));
+/*function filterByPokedex(data,"name") {
+    let data = POKEMON.pokemon
+    data.sort();
+    console.log(data);
 }
 const app = {
     filterByPokedex
 }
+*/
