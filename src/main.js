@@ -19,7 +19,7 @@ function changeTitleToEggs() {
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-eggFilters.addEventListener ("change", filterEggsByKm);
+  eggFilters.addEventListener ("change", filterEggsByKm);
 }
 
 //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
@@ -51,4 +51,34 @@ function createDivs(element, divType){
   card.appendChild(name);
   card.appendChild(num);
   document.getElementById("listById").appendChild(card).innerHTML;
-}
+  card.addEventListener("click", () => {
+    seila(element);
+  });
+};
+
+//função que traz a interface com informações de cada pokemon que for clicado
+function seila (pokemonData) {
+  document.getElementById("pageTitle").innerHTML = pokemonData.name;
+  document.getElementById("buttons").innerHTML = "";
+  document.getElementById("showComboBox").innerHTML = "";
+  document.getElementById("listById").innerHTML = "";
+  let img = document.createElement("img");
+  img.src = pokemonData.img;
+  img.className = "pokeImg";
+  let num = document.createElement("div");
+  num.innerHTML = "Pokedéx: " + pokemonData.num;
+  num.className = "pokeNum";
+  let weaknesses = document.createElement("div");
+  weaknesses.innerHTML = "Fraquezas: " + pokemonData.weaknesses;
+  weaknesses.className = "pokeWeaknesses";
+  let type = document.createElement("div");
+  type.innerHTML = "Tipo: " + pokemonData.type;
+  type.className = "pokeType";
+  let card = document.createElement("div");
+  card.className = "pokeCard";
+  card.appendChild(img);
+  card.appendChild(num);
+  card.appendChild(type);
+  card.appendChild(weaknesses);
+  document.getElementById("listById").appendChild(card).innerHTML;
+};
