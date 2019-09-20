@@ -1,6 +1,14 @@
-function filterByPokedex(data,condition) {
-    return data.filter(item => item.type.includes(condition));
-}
+const data = POKEMON.pokemon;
 const app = {
-    filterByPokedex
+  filterByPokedex
+}
+
+function filterByPokedex(data, condition) {
+  return data.filter(item => item.type.includes(condition));
+}
+
+function filterEggsByKm(e) {
+  const valor = e.target.value;
+  console.log(valor);
+  newCards(data.filter(item => item.egg.includes(valor)));
 }
