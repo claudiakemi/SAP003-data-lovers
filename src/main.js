@@ -13,13 +13,16 @@ function changeTitleToPokemon() {
 
 //função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
 function changeTitleToEggs() {
-  document.getElementById("showComboBox").innerHTML = '<select id="eggFilters"><option value="none">Selecione uma kilometragem</option><option value="2 km">2 km</option><option value="5 km">5 km</option><option value="10 km">10 km</option></select>';
+  //document.getElementById("showComboBox").innerHTML = '<select id="eggFilters"><option value="none">Selecione uma kilometragem</option><option value="2 km">2 km</option><option value="5 km">5 km</option><option value="10 km">10 km</option></select>';
+  document.getElementById("showComboBox").innerHTML = '2 km<input id="eggFilter2km" type="image" src="2km-egg.png" value="2 km">5 km<input id="eggFilter5km" type="image" src="5km-egg.png" value="5 km">10 km<input id="eggFilter10km" type="image" src="10km-egg.png" value="10 km">';
   document.getElementById("pageTitle").innerHTML = "OVOS";
   document.getElementById("buttons").innerHTML = "";
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-  eggFilters.addEventListener ("change", filterEggsByKm);
+  eggFilter2km.addEventListener ("click", filterEggsByKm);
+  eggFilter5km.addEventListener ("click", filterEggsByKm);
+  eggFilter10km.addEventListener ("click", filterEggsByKm);
 }
 
 //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
