@@ -5,7 +5,7 @@ document.getElementById("eggs-btn").addEventListener("click", changeTitleToEggs)
 
 //função que muda os elementos do HTML após clicar no botão "Pokémons"
 function changeTitleToPokemon() {
-  document.getElementById("showComboBox").innerHTML = '<select id="filters"><option value="num">Pokedéx</option><option value="name" id="namealpha">Ordem Alfabética</option></select>';
+  document.getElementById("showComboBox").innerHTML = '<select id="filters"><option value="num">Pokedéx</option><option value="name">Ordem Alfabética</option></select>';
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
   document.getElementById("buttons").innerHTML = "";
   data.forEach((element) => {
@@ -47,7 +47,7 @@ function createDivs(element, divType){
     let egg = document.createElement("div");
     egg.innerHTML = element.egg;
     card.appendChild(egg);
-  } else {
+  } else (){
     card.className = "pokemonCard";
   }
   card.appendChild(img);
@@ -55,13 +55,4 @@ function createDivs(element, divType){
   card.appendChild(num);
   document.getElementById("listById").appendChild(card).innerHTML;
   )
-}
-
-/*document.getElementById("namealpha").addEventListener("change", pokemonAZ)
-function pokemonAZ() 
-let pokemonByAlphabet = data.forEach.name.
-let filtro = pokemonByAlphabet.filter(pokemonByAlphabet => {
-  return filtro;
-});
-console.log(pokemonAZ);
-*/
+  }}
