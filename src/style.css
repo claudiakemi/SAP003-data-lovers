@@ -13,7 +13,7 @@ body {
   font-family: 'Imprima', sans-serif;
 }
 .logoPokemon {
-  width: 100%;
+  width: 50%;
   justify-content: center;
 }
 
@@ -32,8 +32,18 @@ body {
 
 }
 
-#filters {
-  /* font-size: 20px; */
+#eggFilter2km {
+  width: 20%;
+  height: 20%;
+}
+#eggFilter5km {
+  width: 20%;
+  height: 20%;
+}
+
+#eggFilter10km {
+  width: 20%;
+  height: 20%;
 }
 
 .btn {
@@ -42,8 +52,8 @@ body {
   border: 2px solid #7F8087;
   padding: 15px 32px;
   text-align: center;
-  /* font-size: 20px; */
   font-family: 'Imprima', sans-serif;
+  font-weight: bold;
 }
 
 .btn:hover {
@@ -63,7 +73,6 @@ body {
   flex-wrap: wrap;
   align-content: space-around;
   line-height: 1.6;
-  /* font-size: 20px; */
   font-weight: bold;
   column-gap: 40px;
 }
@@ -74,10 +83,20 @@ body {
   padding: 10px;
   margin-bottom: 20px;
 }
+.pokemonCard:hover{
+    background-color: #5CA3E0;
+}
 
 .pokemonEgg{
   border: 2px solid #5CA3E0;
   border-radius: 12px;
   padding: 10px;
   margin-bottom: 20px;
+}
+.pokemonEgg:hover{
+  background-color: #5CA3E0;
+}
+
+.pokeImg {
+  width: 60%;
 }
