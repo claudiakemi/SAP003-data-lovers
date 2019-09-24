@@ -29,16 +29,17 @@ body {
 #showComboBox {
   padding-bottom: 30px;
   justify-content: center;
-
 }
 
 #eggFilter2km {
   width: 20%;
   height: 20%;
+  margin-right: 15px;
 }
 #eggFilter5km {
   width: 20%;
   height: 20%;
+  margin-right: 15px;
 }
 
 #eggFilter10km {
