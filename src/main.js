@@ -10,28 +10,28 @@ function changeTitleToPokemon() {
   printPokemons(data);
 };
 
-function printPokemons(arr){
+function printPokemons(arr) {
   document.getElementById("listById").innerHTML = "";
   data.forEach((element) => {
     createDivs(element, "");
   });
 };
 
-function changeOrder(){
+function changeOrder() {
   let order = document.getElementById("order");
-  if(order.value === "AZ"){
-    data.sort(function(a,b){
-      return a.name.localeCompare(b.name, "en", {sensitivity: "base"});
-    });    
-  } else if(order.value === "ZA"){
-      data.sort(function(a,b){
-        return b.name.localeCompare(a.name, "en", {sensitivity: "base"} )
-      });  
-    } else {
-    data.sort(function(a,b){
+  if (order.value === "AZ") {
+    data.sort(function (a, b) {
+      return a.name.localeCompare(b.name, "en", { sensitivity: "base" });
+    });
+  } else if (order.value === "ZA") {
+    data.sort(function (a, b) {
+      return b.name.localeCompare(a.name, "en", { sensitivity: "base" })
+    });
+  } else {
+    data.sort(function (a, b) {
       return a.num.localeCompare(b.num);
     });
-  }       
+  }
   printPokemons(data);
 }
 //função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
@@ -44,13 +44,13 @@ function changeTitleToEggs() {
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-  eggFilter2km.addEventListener ("click", filterEggsByKm);
-  eggFilter5km.addEventListener ("click", filterEggsByKm);
-  eggFilter10km.addEventListener ("click", filterEggsByKm);
+  eggFilter2km.addEventListener("click", filterEggsByKm);
+  eggFilter5km.addEventListener("click", filterEggsByKm);
+  eggFilter10km.addEventListener("click", filterEggsByKm);
 }
 
 //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
-function newCards (filteredEggs){
+function newCards(filteredEggs) {
   document.getElementById("listById").innerHTML = "";
   filteredEggs.forEach((item) => {
     createDivs(item, "withEgg");
@@ -58,7 +58,7 @@ function newCards (filteredEggs){
 }
 
 //função de criar os cards (novas <div>)
-function createDivs(element, divType){
+function createDivs(element, divType) {
   let name = document.createElement("div");
   name.innerHTML = element.name;
   let img = document.createElement("img");
@@ -66,7 +66,7 @@ function createDivs(element, divType){
   let num = document.createElement("div");
   num.innerHTML = "Pokedéx: " + element.num;
   let card = document.createElement("div");
-  if (divType == "withEgg"){
+  if (divType == "withEgg") {
     card.className = "pokemonEgg";
     let egg = document.createElement("div");
     egg.innerHTML = element.egg;
@@ -85,7 +85,7 @@ function createDivs(element, divType){
 };
 
 //função que traz a interface com informações de cada pokemon que for clicado
-function eachPokemon (pokemonData) {
+function eachPokemon(pokemonData) {
   document.getElementById("pageTitle").innerHTML = pokemonData.name;
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("showComboBox").innerHTML = "";
