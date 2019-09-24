@@ -3,37 +3,42 @@ document.getElementById("eggs-btn").addEventListener("click", changeTitleToEggs)
 
 //função que muda os elementos do HTML após clicar no botão "Pokémons"
 function changeTitleToPokemon() {
-  document.getElementById("showComboBox").innerHTML = '<select id="order"><option value="num">Pokedéx</option><option value="AZ">A-Z</option><option value="ZA">Z-A</option></select>';
+  document.getElementById("showComboBox").innerHTML = '<select id="order"><option value="num">Pokedéx 1 a 151</option><option value="num2">Pokedéx 151 a 1</option><option value="AZ">A-Z</option><option value="ZA">Z-A</option></select>';
   document.getElementById("order").addEventListener("click", changeOrder);
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
   document.getElementById("buttons").innerHTML = "";
   printPokemons(data);
 };
 
-function printPokemons(arr){
+function printPokemons(arr) {
   document.getElementById("listById").innerHTML = "";
   data.forEach((element) => {
     createDivs(element, "");
   });
 };
 
-function changeOrder(){
+function changeOrder() {
   let order = document.getElementById("order");
-  if(order.value === "AZ"){
-    data.sort(function(a,b){
-      return a.name.localeCompare(b.name, "en", {sensitivity: "base"});
-    });    
-  } else if(order.value === "ZA"){
-      data.sort(function(a,b){
-        return b.name.localeCompare(a.name, "en", {sensitivity: "base"} )
-      });  
-    } else {
-    data.sort(function(a,b){
+  if(order.value === "num") {
+    data.sort(function (a, b) {
       return a.num.localeCompare(b.num);
+  });
+  } else if(order.value === "num2") {
+      data.sort(function (a, b) {
+        return b.num.localeCompare(a.num);
     });
-  }       
-  printPokemons(data);
+      } else if(order.value === "AZ") {
+        data.sort(function (a, b) {
+          return a.name.localeCompare(b.name, "en", { sensitivity: "base" });
+      });
+        } else {
+        data.sort(function (a, b) {
+          return b.name.localeCompare(a.name, "en", { sensitivity: "base" });
+    });
+        }
+            printPokemons(data);
 }
+
 //função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
 function changeTitleToEggs() {
   //document.getElementById("showComboBox").innerHTML = '<select id="eggFilters"><option value="none">Selecione uma kilometragem</option><option value="2 km">2 km</option><option value="5 km">5 km</option><option value="10 km">10 km</option></select>';
@@ -44,9 +49,9 @@ function changeTitleToEggs() {
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-  eggFilter2km.addEventListener ("click", filterEggsByKm);
-  eggFilter5km.addEventListener ("click", filterEggsByKm);
-  eggFilter10km.addEventListener ("click", filterEggsByKm);
+  eggFilter2km.addEventListener("click", filterEggsByKm);
+  eggFilter5km.addEventListener("click", filterEggsByKm);
+  eggFilter10km.addEventListener("click", filterEggsByKm);
 }
 
 //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
@@ -86,7 +91,7 @@ function createDivs(element, divType) {
 };
 
 //função que traz a interface com informações de cada pokemon que for clicado
-function eachPokemon (pokemonData) {
+function eachPokemon(pokemonData) {
   document.getElementById("pageTitle").innerHTML = pokemonData.name;
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("showComboBox").innerHTML = "";
