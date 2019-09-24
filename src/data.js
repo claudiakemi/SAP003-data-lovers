@@ -9,6 +9,5 @@ function filterByPokedex(data, condition) {
 
 function filterEggsByKm(e) {
   const valor = e.target.value;
-  console.log(valor);
   newCards(data.filter(item => item.egg.includes(valor)));
 }
