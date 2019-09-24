@@ -69,13 +69,13 @@ body {
   background-color: #5CA3E0;
 }
 
-.pokemonEgg{
+.pokemonEgg {
   border: 2px solid #5CA3E0;
   border-radius: 12px;
   padding: 10px;
   margin-bottom: 20px;
 }
-.pokemonEgg:hover{
+.pokemonEgg:hover {
   background-color: #5CA3E0;
 }
 
