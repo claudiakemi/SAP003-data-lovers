@@ -1,8 +1,14 @@
-// esta é uma função de exemplo
-// veja como agregamos a função ao objeto global window
+const data = POKEMON.pokemon;
+const app = {
+  filterByPokedex
+}
 
-const example = () => {
-  return "example";
-};
+function filterByPokedex(data, condition) {
+  return data.filter(item => item.type.includes(condition));
+}
 
-window.example = example;
+function filterEggsByKm(e) {
+  const valor = e.target.value;
+  console.log(valor);
+  newCards(data.filter(item => item.egg.includes(valor)));
+}
