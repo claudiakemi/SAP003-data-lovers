@@ -37,7 +37,7 @@ function changeOrder(){
 //função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
 function changeTitleToEggs() {
   //document.getElementById("showComboBox").innerHTML = '<select id="eggFilters"><option value="none">Selecione uma kilometragem</option><option value="2 km">2 km</option><option value="5 km">5 km</option><option value="10 km">10 km</option></select>';
-  document.getElementById("showComboBox").innerHTML = '<input id="eggFilter2km" type="image" src="ovo-com-2km.png" value="2 km"> <input id="eggFilter5km" type="image" src="ovo-com-5km.png" value="5 km"> <input id="eggFilter10km" type="image" src="ovo-com-10km.png" value="10 km">';
+  document.getElementById("showComboBox").innerHTML = '<input id="eggFilter2km" class="eggImg" type="image" src="ovo-com-2km.png" value="2 km"> <input id="eggFilter5km" class="eggImg" type="image" src="ovo-com-5km.png" value="5 km"> <input id="eggFilter10km" class="eggImg" type="image" src="ovo-com-10km.png" value="10 km">';
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("pageTitle").innerHTML = "OVOS";
 
@@ -50,15 +50,16 @@ function changeTitleToEggs() {
 }
 
 //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
-function newCards (filteredEggs){
+function newCards (filteredEggs) {
   document.getElementById("listById").innerHTML = "";
+  console.log(filteredEggs.length);
   filteredEggs.forEach((item) => {
     createDivs(item, "withEgg");
   });
 }
 
 //função de criar os cards (novas <div>)
-function createDivs(element, divType){
+function createDivs(element, divType) {
   let name = document.createElement("div");
   name.innerHTML = element.name;
   let img = document.createElement("img");
@@ -66,7 +67,7 @@ function createDivs(element, divType){
   let num = document.createElement("div");
   num.innerHTML = "Pokedéx: " + element.num;
   let card = document.createElement("div");
-  if (divType == "withEgg"){
+  if (divType == "withEgg") {
     card.className = "pokemonEgg";
     let egg = document.createElement("div");
     egg.innerHTML = element.egg;
