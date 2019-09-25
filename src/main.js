@@ -20,10 +20,10 @@ function printPokemons(arr) {
 
 //função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
 function changeTitleToEggs() {
+
   document.getElementById("showComboBox").innerHTML = "<input id=\"eggFilter2km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-2km.png\" value=\"2 km\"> <input id=\"eggFilter5km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-5km.png\" value=\"5 km\"> <input id=\"eggFilter10km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-10km.png\" value=\"10 km\">";
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("pageTitle").innerHTML = "OVOS";
-
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
