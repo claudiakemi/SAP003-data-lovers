@@ -11,4 +11,4 @@ describe("example", () => {
 
   it("returns `example`", () => {
     expect(app.example()).toEqual("example");
-});
+})});
