@@ -1,4 +1,26 @@
-# Data Lovers
+# Projeto Data Lovers
+## Pokémon
+
+## Índice
+
+* [1. Introdução](#1-introdução)
+* [2. Definição de produto](#2-definição-de-produto)
+* [3. Histórias de usuário](#3-histórias-de-usuário)
+* [4. Protótipo de baixa fidelidade](#-protótipo-de-baixa-fidelidade)
+
+***
+
+## 1. Introdução
+
+O projeto Data Lovers é o segundo projeto proposto no bootcamp da Laboratória e baseia-se na criação de um produto (dashboard) a partir de uma base de dados. A base de dados escolhida foi do jogo Pokémon GO, em que há uma lista com os 151 Pokémons da região de Kanto, com suas respectivas estatísticas utilizadas no jogo.
+
+## 2. Definição de produto
+
+## 3. Histórias de usuário
+
+## 4. Protótipo de baixa fidelidade
+
+<!-- # Data Lovers
 
 ## Índice
 
@@ -427,4 +449,4 @@ Quando estiver pronta para codar, sugerimos começar desta forma:
 * [ ] UI: Mostra lista/tabela/etc com dados e/ou indicadores.
 * [ ] UI: Permite ordenar dados por um ou mais campos (asc e desc).
 * [ ] UI: Permite filtrar dados com base em uma condição.
-* [ ] UI: É _responsivo_.
+* [ ] UI: É _responsivo_. -->
