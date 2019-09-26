@@ -1,10 +1,16 @@
+const data = POKEMON.pokemon;
 document.getElementById("pokemon-btn").addEventListener("click", changeTitleToPokemon);
 document.getElementById("eggs-btn").addEventListener("click", changeTitleToEggs);
 
 //função que muda os elementos do HTML após clicar no botão "Pokémons"
 function changeTitleToPokemon() {
   document.getElementById("showComboBox").innerHTML = "<select id=\"order\"><option value=\"num\">Pokedéx 1 a 151</option><option value=\"num2\">Pokedéx 151 a 1</option><option value=\"AZ\">A-Z</option><option value=\"ZA\">Z-A</option></select>";
-  document.getElementById("order").addEventListener("click", app.changeOrder);
+  document.getElementById("order").addEventListener("click", () => {
+    let order = document.getElementById("order").value;
+    const pokeData = app.changeOrder(data, order);
+    printPokemons(pokeData);
+
+  });
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
   document.getElementById("buttons").innerHTML = "";
   printPokemons(data);
