@@ -9,7 +9,7 @@ function changeTitleToPokemon() {
     let order = document.getElementById("order").value;
     const pokeData = app.changeOrder(data, order);
     printPokemons(pokeData);
-
+    const valor = e.target.value;
   });
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
   document.getElementById("buttons").innerHTML = "";
@@ -40,7 +40,6 @@ function changeTitleToEggs() {
 //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
 function newCards (filteredEggs) {
   document.getElementById("listById").innerHTML = "";
-  console.log(filteredEggs.length);
   filteredEggs.forEach((item) => {
     createDivs(item, "withEgg");
   });
