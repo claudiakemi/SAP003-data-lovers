@@ -42,9 +42,9 @@ Definição de pronto:
 
 ## 4. Protótipo de baixa fidelidade
 
-![protótipo1](IMG_5048.jpg)
-![protótipo2](IMG_5051.JPG)
-![protótipo3](IMG_5052.jpg)
+![protótipo1](src/IMG_5048.jpg)
+![protótipo2](src/IMG_5051.JPG)
+![protótipo3](src/IMG_5052.jpg)
 
 <!-- # Data Lovers
 
@@ -475,4 +475,4 @@ Quando estiver pronta para codar, sugerimos começar desta forma:
 * [ ] UI: Mostra lista/tabela/etc com dados e/ou indicadores.
 * [ ] UI: Permite ordenar dados por um ou mais campos (asc e desc).
 * [ ] UI: Permite filtrar dados com base em uma condição.
-* [ ] UI: É _responsivo_. --> -->
+* [ ] UI: É _responsivo_. --> 
