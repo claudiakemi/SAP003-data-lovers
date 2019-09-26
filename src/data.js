@@ -21,11 +21,11 @@ function changeOrder(data, orderBy) {
 }
 
 function filterEggsByKm(e) {
-  const valor = e.target.value;
   newCards(data.filter(item => item.egg.includes(valor)));
 }
 
 window.app = {
   changeOrder,
-  filterEggsByKm
+  filterEggsByKm,
+  newCards
 };
