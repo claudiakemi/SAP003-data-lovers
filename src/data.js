@@ -29,3 +29,4 @@ window.app = {
   changeOrder,
   filterEggsByKm
 };
+
