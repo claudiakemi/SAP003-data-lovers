@@ -3,13 +3,14 @@ document.getElementById("eggs-btn").addEventListener("click", changeTitleToEggs)
 
 //função que muda os elementos do HTML após clicar no botão "Pokémons"
 function changeTitleToPokemon() {
-  document.getElementById("showComboBox").innerHTML = '<select id="order"><option value="num">Pokedéx 1 a 151</option><option value="num2">Pokedéx 151 a 1</option><option value="AZ">A-Z</option><option value="ZA">Z-A</option></select>';
-  document.getElementById("order").addEventListener("click", changeOrder);
+  document.getElementById("showComboBox").innerHTML = "<select id=\"order\"><option value=\"num\">Pokedéx 1 a 151</option><option value=\"num2\">Pokedéx 151 a 1</option><option value=\"AZ\">A-Z</option><option value=\"ZA\">Z-A</option></select>";
+  document.getElementById("order").addEventListener("click", app.changeOrder);
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
   document.getElementById("buttons").innerHTML = "";
   printPokemons(data);
 };
 
+//função que printa os pokemóns na tela em cards
 function printPokemons(arr) {
   document.getElementById("listById").innerHTML = "";
   data.forEach((element) => {
@@ -17,39 +18,17 @@ function printPokemons(arr) {
   });
 };
 
-function changeOrder() {
-  let order = document.getElementById("order");
-  if(order.value === "num") {
-    data.sort(function (a, b) {
-      return a.num.localeCompare(b.num);
-  });
-  } else if(order.value === "num2") {
-      data.sort(function (a, b) {
-        return b.num.localeCompare(a.num);
-    });
-      } else if(order.value === "AZ") {
-        data.sort(function (a, b) {
-          return a.name.localeCompare(b.name, "en", { sensitivity: "base" });
-      });
-        } else {
-        data.sort(function (a, b) {
-          return b.name.localeCompare(a.name, "en", { sensitivity: "base" });
-    });
-        }
-            printPokemons(data);
-}
-
 //função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
 function changeTitleToEggs() {
-  document.getElementById("showComboBox").innerHTML = '<input id="eggFilter2km" class="eggImg" type="image" src="ovo-com-2km.png" value="2 km"> <input id="eggFilter5km" class="eggImg" type="image" src="ovo-com-5km.png" value="5 km"> <input id="eggFilter10km" class="eggImg" type="image" src="ovo-com-10km.png" value="10 km">';
+  document.getElementById("showComboBox").innerHTML = "<input id=\"eggFilter2km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-2km.png\" value=\"2 km\"> <input id=\"eggFilter5km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-5km.png\" value=\"5 km\"> <input id=\"eggFilter10km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-10km.png\" value=\"10 km\">";
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("pageTitle").innerHTML = "OVOS";
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-  eggFilter2km.addEventListener("click", filterEggsByKm);
-  eggFilter5km.addEventListener("click", filterEggsByKm);
-  eggFilter10km.addEventListener("click", filterEggsByKm);
+  eggFilter2km.addEventListener("click", app.filterEggsByKm);
+  eggFilter5km.addEventListener("click", app.filterEggsByKm);
+  eggFilter10km.addEventListener("click", app.filterEggsByKm);
 }
 
 //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
