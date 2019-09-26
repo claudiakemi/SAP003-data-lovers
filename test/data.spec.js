@@ -6,7 +6,7 @@ describe("função filtro", () => {
   it("is a function", () => {
     expect(typeof app.filterEggsByKm).toBe("function");
   });
-
+  
   it("returns `menor número da pokedéx para o maior`", () => {
     expect(app.changeOrder(pokemonzinho, "num")).toEqual([{"num": "001", "name": "Pikachu", "egg": "2 km"}, {"num": "002", "name": "Char", "egg": "Not in Eggs"}, {"num": "003", "name": "Mew", "egg": "5 km"}, {"num": "004", "name": "Buba", "egg": "10 km"}]);
   });

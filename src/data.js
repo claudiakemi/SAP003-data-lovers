@@ -1,4 +1,3 @@
-//const data = POKEMON.pokemon;
 function changeOrder(data, orderBy) {
 
   if (orderBy === "num") {
