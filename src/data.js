@@ -19,9 +19,8 @@ function changeOrder(data, orderBy) {
   }
 }
 
-function filterEggsByKm(e) {
-  const valor = e.target.value;
-  newCards(data.filter(item => item.egg.includes(valor)));
+function filterEggsByKm(data, valor) {
+  return data.filter(item => item.egg.includes(valor));
 }
 
 window.app = {

@@ -12,7 +12,8 @@ function changeTitleToPokemon() {
     
     printPokemons(pokeData);
 
-  });//const data = POKEMON.pokemon;
+    const valor = e.target.value;
+  });
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
   document.getElementById("buttons").innerHTML = "";
   printPokemons(data);
@@ -35,10 +36,22 @@ function changeTitleToEggs() {
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-  eggFilter2km.addEventListener("click", app.filterEggsByKm);
-  eggFilter5km.addEventListener("click", app.filterEggsByKm);
-  eggFilter10km.addEventListener("click", app.filterEggsByKm);
 
+  eggFilter2km.addEventListener("click", (e) => {
+    const valor = e.target.value;
+    const paloma = app.filterEggsByKm(data, valor);
+    newCards(paloma);
+  });
+  eggFilter5km.addEventListener("click", (e) => {
+    const valor = e.target.value;
+    const paloma = app.filterEggsByKm(data, valor);
+    newCards(paloma);
+  });
+  eggFilter10km.addEventListener("click", (e) => {
+    const valor = e.target.value;
+    const paloma = app.filterEggsByKm(data, valor);
+    newCards(paloma);
+  });
 }
 
 //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
