@@ -24,14 +24,14 @@ describe("função filtro", () => {
   });
 
   it("returns `quilometragem dos ovos`", () => {
-    expect(app.newCards(app.filterEggsByKm(pokemonzinho, "2 km")).toEqual([{"num": "001", "name": "Pikachu", "egg": "2 km"}]));
+    expect(app.filterEggsByKm(pokemonzinho, "2 km")).toEqual([{"num": "001", "name": "Pikachu", "egg": "2 km"}]);
   });
 
   it("returns `quilometragem dos ovos`", () => {
-    expect(app.newCards(app.filterEggsByKm(pokemonzinho, "5 km")).toEqual([{"num": "003", "name": "Mew", "egg": "5 km"}]));
+    expect(app.filterEggsByKm(pokemonzinho, "5 km")).toEqual([{"num": "003", "name": "Mew", "egg": "5 km"}]);
   });
 
   it("returns `quilometragem dos ovos`", () => {
-    expect(app.newCards(app.filterEggsByKm(pokemonzinho, "10 km")).toEqual([{"num": "004", "name": "Buba", "egg": "10 km"}]));
+    expect(app.filterEggsByKm(pokemonzinho, "10 km")).toEqual([{"num": "004", "name": "Buba", "egg": "10 km"}]);
   });
 });
