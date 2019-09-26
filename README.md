@@ -16,9 +16,35 @@ O projeto Data Lovers é o segundo projeto proposto no bootcamp da Laboratória 
 
 ## 2. Definição de produto
 
+O desenho do produto foi feito a partir da identificação da ausência de algumas informações no jogo Pokémon GO que são importantes para que o usuário consiga elaborar melhores estratégias para ganhar batalhas pokémon. Assim, criamos uma interface em que o usuário poderá ter acesso à informações que podem auxiliá-lo a ganhar batalhas pokémon e a ter maiores chances de obter pokémons mais fortes. As informações são:
+* Fraquezas.
+* Lista de pokémons que nascem de ovos de acordo com a kilometragem (2 km, 5 km e 10 km) necessária para serem chocados.  
+
+Os principais usuários desse produto seriam crianças, jovens e adultos que tenham interesse em jogar, ou que já jogam, Pokemon GO. Seus principais objetivos são buscar informações sobre os pokemóns de forma rápida, intuitiva e visual, a fim de obter sucesso em suas batalhas pokémon.
+A interface pode ser utilizada enquanto o usuário está jogando ou em outros momentos, com a finalidade de pesquisa e elaboração de estratégias.
+
 ## 3. Histórias de usuário
 
+* "Eu como usuário quero filtrar os pokémons por ordem alfabética"
+Definição de pronto:
+
+* "Eu como usuário quero filtrar os pokémons pela Pokedéx"
+Definição de pronto:
+
+* "Eu como usuário quero saber o tipo do pokémon"
+Definição de pronto:
+
+* "Eu como usuário quero saber as fraquezas do pokémon"
+Definição de pronto:
+
+* "Eu como usuário quero saber as chances de um ovo ser de determinado pokémon"
+Definição de pronto:
+
 ## 4. Protótipo de baixa fidelidade
+
+![protótipo1](IMG_5048.jpg)
+![protótipo2](IMG_5051.JPG)
+![protótipo3](IMG_5052.jpg)
 
 <!-- # Data Lovers
 
@@ -285,7 +311,7 @@ Por exemplo, se "descomentamos" a seguinte linha:
 
 ```html
 <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-```
+<!-- ```
 
 A linha ficaria assim:
 
@@ -449,4 +475,4 @@ Quando estiver pronta para codar, sugerimos começar desta forma:
 * [ ] UI: Mostra lista/tabela/etc com dados e/ou indicadores.
 * [ ] UI: Permite ordenar dados por um ou mais campos (asc e desc).
 * [ ] UI: Permite filtrar dados com base em uma condição.
-* [ ] UI: É _responsivo_. -->
+* [ ] UI: É _responsivo_. --> -->
