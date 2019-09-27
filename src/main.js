@@ -35,29 +35,27 @@ function changeTitleToEggs() {
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-
+  
   eggFilter2km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-   let porcentagem = parseFloat(151*(egg.length)/100)
-    document.getElementById("result").innerHTML = porcentagem;
+   let porcentagem = parseFloat((egg.length)/151*100)
+    document.getElementById("result").innerHTML = Math.round(porcentagem);
   });
   eggFilter5km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-    let porcentagem = parseFloat(151*(egg.length)/100)
-    document.getElementById("result").innerHTML = porcentagem;
- 
+    let porcentagem = parseFloat((egg.length)/151*100)
+    document.getElementById("result").innerHTML = Math.round(porcentagem);
   });
   eggFilter10km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-    let porcentagem = parseFloat(151*(egg.length)/100)
-    document.getElementById("result").innerHTML = porcentagem;
- 
+    let porcentagem = parseFloat((egg.length)/151*100)
+    document.getElementById("result").innerHTML = Math.round(porcentagem);
   });
 
   //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
