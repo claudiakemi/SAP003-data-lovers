@@ -40,22 +40,22 @@ function changeTitleToEggs() {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-   let porcentagem = parseFloat((egg.length)/151*100)
-    document.getElementById("result").innerHTML = Math.round(porcentagem);
+   let porcentagem = Math.round(parseFloat((egg.length)/151*100))
+    document.getElementById("result").innerHTML = "A quantidade de ovos de 2km são de " + porcentagem + "%";;
   });
   eggFilter5km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-    let porcentagem = parseFloat((egg.length)/151*100)
-    document.getElementById("result").innerHTML = Math.round(porcentagem);
+    let porcentagem = Math.round(parseFloat((egg.length)/151*100))
+    document.getElementById("result").innerHTML = "A quantidade de ovos de 5km são de " + porcentagem + "%";
   });
   eggFilter10km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-    let porcentagem = parseFloat((egg.length)/151*100)
-    document.getElementById("result").innerHTML = Math.round(porcentagem);
+    let porcentagem = Math.round(parseFloat((egg.length)/151*100))
+    document.getElementById("result").innerHTML = "A quantidade de ovos de 10km são de " + porcentagem + "%";
   });
 
   //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
