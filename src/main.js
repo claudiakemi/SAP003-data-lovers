@@ -7,12 +7,9 @@ function changeTitleToPokemon() {
   document.getElementById("showComboBox").innerHTML = "<select id=\"order\"><option value=\"num\">Pokedéx 1 a 151</option><option value=\"num2\">Pokedéx 151 a 1</option><option value=\"AZ\">A-Z</option><option value=\"ZA\">Z-A</option></select>";
   document.getElementById("back"). innerHTML = "<input type=\"button\" class=\"btn\" value=\"Voltar\" onClick=\"window.location.reload()\">";
   document.getElementById("order").addEventListener("click", () => {
-      let order = document.getElementById("order").value;
+    let order = document.getElementById("order").value;
     const pokeData = app.changeOrder(data, order);
-    
     printPokemons(pokeData);
-
-    const valor = e.target.value;
   });
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
   document.getElementById("buttons").innerHTML = "";
@@ -39,18 +36,18 @@ function changeTitleToEggs() {
 
   eggFilter2km.addEventListener("click", (e) => {
     const valor = e.target.value;
-    const paloma = app.filterEggsByKm(data, valor);
-    newCards(paloma);
+    const eggs = app.filterEggsByKm(data, valor);
+    newCards(eggs);
   });
   eggFilter5km.addEventListener("click", (e) => {
     const valor = e.target.value;
-    const paloma = app.filterEggsByKm(data, valor);
-    newCards(paloma);
+    const eggs = app.filterEggsByKm(data, valor);
+    newCards(eggs);
   });
   eggFilter10km.addEventListener("click", (e) => {
     const valor = e.target.value;
-    const paloma = app.filterEggsByKm(data, valor);
-    newCards(paloma);
+    const eggs = app.filterEggsByKm(data, valor);
+    newCards(eggs);
   });
 }
 
@@ -84,8 +81,8 @@ function createDivs(element, divType) {
   card.appendChild(num);
   //adiciona o evento de clique nos cards, chamando a função que leva para a interface com info de cada pokemon
   document.getElementById("listById").appendChild(card).innerHTML;
-   card.addEventListener("click", () => {
-   eachPokemon(element);
+  card.addEventListener("click", () => {
+    eachPokemon(element);
   });
 };
 
