@@ -9,9 +9,7 @@ function changeTitleToPokemon() {
   document.getElementById("order").addEventListener("click", () => {
     let order = document.getElementById("order").value;
     const pokeData = app.changeOrder(data, order);
-    
     printPokemons(pokeData);
-
   });
   document.getElementById("pageTitle").innerHTML = "POKÉMONS";
   document.getElementById("buttons").innerHTML = "";
