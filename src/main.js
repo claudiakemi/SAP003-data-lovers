@@ -56,7 +56,8 @@ function changeTitleToEggs() {
     document.getElementById("result").innerHTML = porcentagem + "% de 151 pokémons aparecem em ovos de 10km";
   });
 
-  //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no dropdown
+
+  //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no botão
   function newCards (filteredEggs) {
     document.getElementById("listById").innerHTML = "";
     filteredEggs.forEach((item) => {
@@ -75,13 +76,11 @@ function createDivs(element, divType) {
   num.innerHTML = "Pokedéx: " + element.num;
   let card = document.createElement("div");
   if (divType == "withEgg") {
-    card.className = "pokemonEgg";
     let egg = document.createElement("div");
     egg.innerHTML = element.egg;
     card.appendChild(egg);
-  } else {
-    card.className = "pokemonCard";
   }
+  card.className = "pokemonCard";
   card.appendChild(img);
   card.appendChild(name);
   card.appendChild(num);
@@ -95,8 +94,10 @@ function createDivs(element, divType) {
 //função que traz a interface com informações de cada pokemon que for clicado
 function eachPokemon(pokemonData) {
   document.getElementById("pageTitle").innerHTML = pokemonData.name;
+  document.getElementById("introText").innerHTML = "";
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("showComboBox").innerHTML = "";
+  document.getElementById("result").innerHTML= "";
   document.getElementById("back"). innerHTML = "<input type=\"button\" class=\"btn\" value=\"Voltar\" onClick=\"changeTitleToPokemon()\">";
   document.getElementById("listById").innerHTML = "";
   let img = document.createElement("img");
@@ -117,7 +118,5 @@ function eachPokemon(pokemonData) {
   card.appendChild(num);
   card.appendChild(type);
   card.appendChild(weaknesses);
-
   document.getElementById("listById").appendChild(card).innerHTML;
-
 };
