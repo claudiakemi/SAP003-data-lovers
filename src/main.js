@@ -33,6 +33,7 @@ function changeTitleToEggs() {
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
+
   eggFilter2km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
@@ -54,6 +55,7 @@ function changeTitleToEggs() {
     let porcentagem = Math.round(parseFloat((egg.length)/151*100));
     document.getElementById("result").innerHTML = porcentagem + "% de 151 pokémons aparecem em ovos de 10km";
   });
+
 
   //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no botão
   function newCards (filteredEggs) {
