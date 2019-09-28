@@ -1,5 +1,4 @@
 function changeOrder(data, orderBy) {
-
   if (orderBy === "num") {
     return data.sort(function (a, b) {
       return a.num.localeCompare(b.num);
@@ -27,4 +26,3 @@ window.app = {
   changeOrder,
   filterEggsByKm
 };
-
