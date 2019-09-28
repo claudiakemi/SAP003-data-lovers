@@ -21,24 +21,24 @@ O desenho do produto foi feito a partir da identificação da ausência de algum
 * Fraquezas.
 * Lista de pokémons que nascem de ovos de acordo com a quilometragem (2 km, 5 km e 10 km) necessária para serem chocados.  
 
-Os principais usuários desse produto seriam crianças, jovens e adultos que tenham interesse em jogar, ou que já jogam, Pokemon GO. Seus principais objetivos são buscar informações sobre os pokemóns de forma rápida, intuitiva e visual, a fim de obter sucesso em suas batalhas pokémon.
+Os principais usuários desse produto seriam crianças, jovens e adultos que tenham interesse em jogar, ou que já jogam, Pokémon GO. Seus principais objetivos são buscar informações sobre os pokemóns de forma rápida, intuitiva e visual, a fim de obter sucesso em suas batalhas pokémon.
 A interface pode ser utilizada enquanto o usuário está jogando ou em outros momentos, com a finalidade de pesquisa e elaboração de estratégias.
 
 ## 3. Histórias de usuário
 
-* "Eu como usuário quero filtrar os pokémons por ordem alfabética"
+* "Eu como usuário quero filtrar os pokémons por ordem alfabética".
 Definição de pronto: Quando o usuário conseguir escolher ordenação de A a Z e de Z a A no dropdown e os cards de pokémons aparecerem na tela ordenados de acordo com a escolha.
 
-* "Eu como usuário quero filtrar os pokémons pela Pokedéx"
+* "Eu como usuário quero filtrar os pokémons pela Pokedéx".
 Definição de pronto: Quando o usuário conseguir escolher ordenação de 1 a 151 e de 151 a 1 no dropdown e os cards de pokémons aparecerem na tela ordenados de acordo com a escolha.
 
-* "Eu como usuário quero saber o tipo do pokémon"
+* "Eu como usuário quero saber o tipo do pokémon".
 Definição de pronto: Quando o usuário escolher os pokémons (ordenando, se necessário), clicando no card que traz a interface com a informação do tipo.
 
-* "Eu como usuário quero saber as fraquezas do pokémon"
+* "Eu como usuário quero saber as fraquezas do pokémon".
 Definição de pronto: Quando o usuário escolher os pokémons (ordenando, se necessário), clicando no card que traz a interface com a informação das fraquezas.
 
-* "Eu como usuário quero saber as chances de um ovo ser de determinado pokémon"
+* "Eu como usuário quero saber as chances de um ovo ser de determinado pokémon".
 Definição de pronto: Quando o usuário clicar no botão de ovos de acordo com a quilometragem e aparecer uma lista de pokémons que nascem de ovos com a quilometragem escolhida.
 
 ## 4. Protótipo de baixa fidelidade
