@@ -32,10 +32,9 @@ function changeTitleToEggs() {
   document.getElementById("pageTitle").innerHTML = "OVOS";
   data.forEach((element) => {
     createDivs(element, "withEgg");
-  
-  const notInEggs = data.reduce((acc, curr) => acc + (curr.egg == "Not in Eggs" ? 1 : 0),0);
-  document.getElementById("result").innerHTML = Math.round(notInEggs/151*100) + "% dos pokémons não aparecem em ovos. Clique nos ovos acima para descobrir os que nascem em ovos."
-  
+    
+  app.calcNotInEggs();
+    document.getElementById("result").innerHTML = Math.round(notInEggs/151*100) + "% dos pokémons não aparecem em ovos. Clique nos ovos acima para descobrir os que nascem em ovos."
   });
 
   eggFilter2km.addEventListener("click", (e) => {
