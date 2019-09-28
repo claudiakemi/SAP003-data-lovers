@@ -50,5 +50,7 @@ Definição de pronto: Quando o usuário clicar no botão de ovos de acordo com 
 ## 5. Testes de usabilidade
 
 * Durante a execução do projeto, identificamos que não ficou claro para os usuários qual o objetivo do produto. Por isso, resolvemos acrescentar um pequeno texto na página inicial para esclarecer esse ponto.
+
 * Também identificamos a dificuldade de voltar para a página anterior e para resolver esse problema, adicionamos um botão com a função de "voltar".
+
 * Adicionamos o botão "voltar" no final da página, após a lista de todos os pokémons filtrados e identificamos que sua posição era um problema, já que o usuário teria de rolar a página inteira para chegar no botão ou até não perceber que o botão existe. A solução foi deixar o botão de "voltar" flutuando no canto inferior direito.
