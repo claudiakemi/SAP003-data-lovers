@@ -1,13 +1,13 @@
 const data = POKEMON.pokemon;
 document.getElementById("pokemon-btn").addEventListener("click", changeTitleToPokemon);
-document.getElementById("eggs-btn").addEventListener("click", changeTitleToEggs);
+document.getElementById("eggsBtn").addEventListener("click", changeTitleToEggs);
 
 //função que muda os elementos do HTML após clicar no botão "Pokémons"
 function changeTitleToPokemon() {
   document.getElementById("showComboBox").innerHTML = "<select id=\"order\"><option value=\"num\">Pokedéx 1 a 151</option><option value=\"num2\">Pokedéx 151 a 1</option><option value=\"AZ\">A-Z</option><option value=\"ZA\">Z-A</option></select>";
   document.getElementById("back"). innerHTML = "<input type=\"button\" class=\"btn back\" value=\"Voltar\" onClick=\"window.location.reload()\">";
   document.getElementById("order").addEventListener("click", () => {
-    let order = document.getElementById("order").value;
+    const order = document.getElementById("order").value;
     const pokeData = app.changeOrder(data, order);
     printPokemons(pokeData);
   });
@@ -32,33 +32,32 @@ function changeTitleToEggs() {
   document.getElementById("pageTitle").innerHTML = "OVOS";
   data.forEach((element) => {
     createDivs(element, "withEgg");
-  
-  const notInEggs = data.reduce((acc, curr) => acc + (curr.egg == "Not in Eggs" ? 1 : 0),0);
-  document.getElementById("result").innerHTML = Math.round(notInEggs/151*100) + "% dos pokémons não aparecem em ovos. Clique nos ovos acima para descobrir os que nascem em ovos."
-  
   });
+  const percentNotInEggs = app.notInEggs(data, "Not in Eggs");
+  const resultNotInEggs = Math.round(percentNotInEggs/151*100);
+  document.getElementById("result").innerHTML = resultNotInEggs + "% dos pokémons não aparecem em ovos. Clique nos ovos acima para descobrir quais nascem em ovos.";
 
   eggFilter2km.addEventListener("click", (e) => {
-    const valor = e.target.value;
-    const egg = app.filterEggsByKm(data, valor);
+    const kmValue = e.target.value;
+    const egg = app.filterEggsByKm(data, kmValue);
     newCards(egg);
-  
-    let porcentagem2km = Math.round(parseFloat((egg.length)/151*100));
-    document.getElementById("result").innerHTML = porcentagem2km + "% de 151 pokémons aparecem em ovos de 2km";
+
+    const percent2km = Math.round(parseFloat((egg.length)/151*100));
+    document.getElementById("result").innerHTML = percent2km + "% de 151 pokémons aparecem em ovos de 2km";
   });
   eggFilter5km.addEventListener("click", (e) => {
-    const valor = e.target.value;
-    const egg = app.filterEggsByKm(data, valor);
+    const kmValue = e.target.value;
+    const egg = app.filterEggsByKm(data, kmValue);
     newCards(egg);
-    let porcentagem5km = Math.round(parseFloat((egg.length)/151*100));
-    document.getElementById("result").innerHTML = porcentagem5km + "% de 151 pokémons aparecem em ovos de 5km";
+    const percent5km = Math.round(parseFloat((egg.length)/151*100));
+    document.getElementById("result").innerHTML = percent5km + "% de 151 pokémons aparecem em ovos de 5km";
   });
   eggFilter10km.addEventListener("click", (e) => {
-    const valor = e.target.value;
-    const egg = app.filterEggsByKm(data, valor);
+    const kmValue = e.target.value;
+    const egg = app.filterEggsByKm(data, kmValue);
     newCards(egg);
-    let porcentagem10km = Math.round(parseFloat((egg.length)/151*100));
-    document.getElementById("result").innerHTML = porcentagem10km + "% de 151 pokémons aparecem em ovos de 10km";
+    const percent10km = Math.round(parseFloat((egg.length)/151*100));
+    document.getElementById("result").innerHTML = percent10km + "% de 151 pokémons aparecem em ovos de 10km";
   });
 
   //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no botão
@@ -72,15 +71,15 @@ function changeTitleToEggs() {
 
 //função de criar os cards (novas <div>)
 function createDivs(element, divType) {
-  let name = document.createElement("div");
+  const name = document.createElement("div");
   name.innerHTML = element.name;
-  let img = document.createElement("img");
+  const img = document.createElement("img");
   img.src = element.img;
-  let num = document.createElement("div");
+  const num = document.createElement("div");
   num.innerHTML = "Pokedéx: " + element.num;
-  let card = document.createElement("div");
+  const card = document.createElement("div");
   if (divType == "withEgg") {
-    let egg = document.createElement("div");
+    const egg = document.createElement("div");
     egg.innerHTML = element.egg;
     card.appendChild(egg);
     card.className = "pokemonCard";
@@ -107,19 +106,19 @@ function createDivs(element, divType) {
     document.getElementById("result").innerHTML= "";
     document.getElementById("back"). innerHTML = "<input type=\"button\" class=\"btn back\" value=\"Voltar\" onClick=\"changeTitleToPokemon()\">";
     document.getElementById("listById").innerHTML = "";
-    let img = document.createElement("img");
+    const img = document.createElement("img");
     img.src = pokemonData.img;
     img.className = "pokeImg";
-    let num = document.createElement("div");
+    const num = document.createElement("div");
     num.innerHTML = "Pokedéx: " + pokemonData.num;
     num.className = "pokeNum";
-    let weaknesses = document.createElement("div");
+    const weaknesses = document.createElement("div");
     weaknesses.innerHTML = "Fraquezas: " + pokemonData.weaknesses;
     weaknesses.className = "pokeWeaknesses";
-    let type = document.createElement("div");
+    const type = document.createElement("div");
     type.innerHTML = "Tipo: " + pokemonData.type;
     type.className = "pokeType";
-    let card = document.createElement("div");
+    const card = document.createElement("div");
     card.className = "pokeCard";
     card.appendChild(img);
     card.appendChild(num);

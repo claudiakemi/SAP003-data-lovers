@@ -18,11 +18,16 @@ function changeOrder(data, orderBy) {
   }
 }
 
-function filterEggsByKm(data, valor) {
-  return data.filter(item => item.egg.includes(valor));
+function filterEggsByKm(data, kmValue) {
+  return data.filter(item => item.egg.includes(kmValue));
+}
+
+function notInEggs(data) {
+  return data.reduce((acc, curr) => acc + (curr.egg == "Not in Eggs" ? 1 : 0), 0);
 }
 
 window.app = {
   changeOrder,
-  filterEggsByKm
+  filterEggsByKm,
+  notInEggs
 };
