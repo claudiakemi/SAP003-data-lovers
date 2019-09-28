@@ -32,30 +32,34 @@ function changeTitleToEggs() {
   document.getElementById("pageTitle").innerHTML = "OVOS";
   data.forEach((element) => {
     createDivs(element, "withEgg");
+  
+  const notInEggs = data.reduce((acc, curr) => acc + (curr.egg == "Not in Eggs" ? 1 : 0),0);
+  document.getElementById("result").innerHTML = Math.round(notInEggs/151*100) + "% dos pokémons não aparecem em ovos. Clique nos ovos acima para descobrir os que nascem em ovos."
+  
   });
 
   eggFilter2km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-    let porcentagem = Math.round(parseFloat((egg.length)/151*100));
-    document.getElementById("result").innerHTML = porcentagem + "% de 151 pokémons aparecem em ovos de 2km";
+  
+    let porcentagem2km = Math.round(parseFloat((egg.length)/151*100));
+    document.getElementById("result").innerHTML = porcentagem2km + "% de 151 pokémons aparecem em ovos de 2km";
   });
   eggFilter5km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-    let porcentagem = Math.round(parseFloat((egg.length)/151*100));
-    document.getElementById("result").innerHTML = porcentagem + "% de 151 pokémons aparecem em ovos de 5km";
+    let porcentagem5km = Math.round(parseFloat((egg.length)/151*100));
+    document.getElementById("result").innerHTML = porcentagem5km + "% de 151 pokémons aparecem em ovos de 5km";
   });
   eggFilter10km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
     newCards(egg);
-    let porcentagem = Math.round(parseFloat((egg.length)/151*100));
-    document.getElementById("result").innerHTML = porcentagem + "% de 151 pokémons aparecem em ovos de 10km";
+    let porcentagem10km = Math.round(parseFloat((egg.length)/151*100));
+    document.getElementById("result").innerHTML = porcentagem10km + "% de 151 pokémons aparecem em ovos de 10km";
   });
-
 
   //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no botão
   function newCards (filteredEggs) {
