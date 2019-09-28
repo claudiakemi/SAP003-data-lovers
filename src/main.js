@@ -33,7 +33,6 @@ function changeTitleToEggs() {
   data.forEach((element) => {
     createDivs(element, "withEgg");
   });
-
   eggFilter2km.addEventListener("click", (e) => {
     const valor = e.target.value;
     const egg = app.filterEggsByKm(data, valor);
