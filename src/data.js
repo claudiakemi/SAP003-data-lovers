@@ -22,7 +22,12 @@ function filterEggsByKm(data, valor) {
   return data.filter(item => item.egg.includes(valor));
 }
 
+function calcNotInEggs(){
+return notInEggs = data.reduce((acc, curr) => acc + (curr.egg == "Not in Eggs" ? 1 : 0),0);
+}
+
 window.app = {
   changeOrder,
-  filterEggsByKm
+  filterEggsByKm,
+  calcNotInEggs
 };
