@@ -4,8 +4,10 @@ document.getElementById("eggsBtn").addEventListener("click", changeTitleToEggs);
 
 //função que muda os elementos do HTML após clicar no botão "Pokémons"
 function changeTitleToPokemon() {
+
   document.getElementById("showComboBox").innerHTML = "<select id=\"order\" class=\"comboBox\"><option value=\"num\">Pokedéx 1 a 151</option><option value=\"num2\">Pokedéx 151 a 1</option><option value=\"AZ\">A-Z</option><option value=\"ZA\">Z-A</option></select>";
   document.getElementById("back"). innerHTML = "<input type=\"button\" class=\"btn back\" value=\"Voltar\" onClick=\"window.location.reload()\">";
+
   document.getElementById("order").addEventListener("click", () => {
     const order = document.getElementById("order").value;
     const pokeData = app.changeOrder(data, order);
@@ -26,12 +28,15 @@ function printPokemons(arr) {
 
 //função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
 function changeTitleToEggs() {
+
   document.getElementById("showComboBox").innerHTML = "<input id=\"eggFilter2km\" class=\"eggImg\" type=\"image\" src=\"./images/ovo-com-2km.png\" value=\"2 km\"> <input id=\"eggFilter5km\" class=\"eggImg\" type=\"image\" src=\"./images/ovo-com-5km.png\" value=\"5 km\"> <input id=\"eggFilter10km\" class=\"eggImg\" type=\"image\" src=\"./images/ovo-com-10km.png\" value=\"10 km\">";
   document.getElementById("back"). innerHTML = "<input type=\"button\" class=\"btn back\" value=\"Voltar\" onClick=\"window.location.reload()\">";
+
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("pageTitle").innerHTML = "OVOS";
   data.forEach((element) => {
     createDivs(element, "withEgg");
+
   });
   const percentNotInEggs = app.notInEggs(data, "Not in Eggs");
   const resultNotInEggs = Math.round(percentNotInEggs/151*100);
@@ -44,24 +49,29 @@ function changeTitleToEggs() {
 
     const percent2km = Math.round(parseFloat((egg.length)/151*100));
     document.getElementById("result").innerHTML = percent2km + "% de 151 pokémons aparecem em ovos de 2km";
+
   });
   eggFilter5km.addEventListener("click", (e) => {
     const kmValue = e.target.value;
     const egg = app.filterEggsByKm(data, kmValue);
     newCards(egg);
+
     const percent5km = Math.round(parseFloat((egg.length)/151*100));
     document.getElementById("result").innerHTML = percent5km + "% de 151 pokémons aparecem em ovos de 5km";
+
   });
   eggFilter10km.addEventListener("click", (e) => {
     const kmValue = e.target.value;
     const egg = app.filterEggsByKm(data, kmValue);
     newCards(egg);
+
     const percent10km = Math.round(parseFloat((egg.length)/151*100));
     document.getElementById("result").innerHTML = percent10km + "% de 151 pokémons aparecem em ovos de 10km";
+
   });
 
   //função que cria os cards de pokemons depois que a kilometragem de ovos foi selecionada no botão
-  function newCards (filteredEggs) {
+  function newCards(filteredEggs) {
     document.getElementById("listById").innerHTML = "";
     filteredEggs.forEach((item) => {
       createDivs(item, "withEgg");
@@ -84,18 +94,19 @@ function createDivs(element, divType) {
     card.appendChild(egg);
     card.className = "pokemonCard";
   } else {
-    card.className = "pokemonCard withoutEgg";}
-    card.appendChild(img);
-    card.appendChild(name);
-    card.appendChild(num);
-    //adiciona o evento de clique nos cards, chamando a função que leva para a interface com info de cada pokemon
-    document.getElementById("listById").appendChild(card).innerHTML;
-    if (divType != "withEgg") {
-      card.addEventListener("click", () => {
-        eachPokemon(element);
-      });
-    };
+    card.className = "pokemonCard withoutEgg";
+  }
+  card.appendChild(img);
+  card.appendChild(name);
+  card.appendChild(num);
+  //adiciona o evento de clique nos cards, chamando a função que leva para a interface com info de cada pokemon
+  document.getElementById("listById").appendChild(card).innerHTML;
+  if (divType != "withEgg") {
+    card.addEventListener("click", () => {
+      eachPokemon(element);
+    });
   };
+};
 
   //função que traz a interface com informações de cada pokemon que for clicado
   function eachPokemon(pokemonData) {
