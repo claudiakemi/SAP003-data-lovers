@@ -4,7 +4,7 @@ document.getElementById("eggsBtn").addEventListener("click", changeTitleToEggs);
 
 //função que muda os elementos do HTML após clicar no botão "Pokémons"
 function changeTitleToPokemon() {
-  document.getElementById("showComboBox").innerHTML = "<select id=\"order\"><option value=\"num\">Pokedéx 1 a 151</option><option value=\"num2\">Pokedéx 151 a 1</option><option value=\"AZ\">A-Z</option><option value=\"ZA\">Z-A</option></select>";
+  document.getElementById("showComboBox").innerHTML = "<select id=\"order\" class=\"comboBox\"><option value=\"num\">Pokedéx 1 a 151</option><option value=\"num2\">Pokedéx 151 a 1</option><option value=\"AZ\">A-Z</option><option value=\"ZA\">Z-A</option></select>";
   document.getElementById("back"). innerHTML = "<input type=\"button\" class=\"btn back\" value=\"Voltar\" onClick=\"window.location.reload()\">";
   document.getElementById("order").addEventListener("click", () => {
     const order = document.getElementById("order").value;
@@ -26,7 +26,7 @@ function printPokemons(arr) {
 
 //função que muda os elementos do HTML após clicar no botão "Ovos" e chama a função de filtro dos ovos
 function changeTitleToEggs() {
-  document.getElementById("showComboBox").innerHTML = "<input id=\"eggFilter2km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-2km.png\" value=\"2 km\"> <input id=\"eggFilter5km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-5km.png\" value=\"5 km\"> <input id=\"eggFilter10km\" class=\"eggImg\" type=\"image\" src=\"ovo-com-10km.png\" value=\"10 km\">";
+  document.getElementById("showComboBox").innerHTML = "<input id=\"eggFilter2km\" class=\"eggImg\" type=\"image\" src=\"./images/ovo-com-2km.png\" value=\"2 km\"> <input id=\"eggFilter5km\" class=\"eggImg\" type=\"image\" src=\"./images/ovo-com-5km.png\" value=\"5 km\"> <input id=\"eggFilter10km\" class=\"eggImg\" type=\"image\" src=\"./images/ovo-com-10km.png\" value=\"10 km\">";
   document.getElementById("back"). innerHTML = "<input type=\"button\" class=\"btn back\" value=\"Voltar\" onClick=\"window.location.reload()\">";
   document.getElementById("buttons").innerHTML = "";
   document.getElementById("pageTitle").innerHTML = "OVOS";
