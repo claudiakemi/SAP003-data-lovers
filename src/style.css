@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Imprima&display=swap');
 
-@media (min-width: 800px){
+@media (min-width: 800px) {
 body {
   background: url("./images/wallpaper-pokemon.jpg");
   background-attachment: fixed;
@@ -23,7 +23,7 @@ body {
   padding-bottom: 30px;
 }
 
-.introText{
+.introText {
   padding-bottom: 15px;
 }
 
