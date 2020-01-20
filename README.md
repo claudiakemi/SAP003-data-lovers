@@ -43,9 +43,9 @@ Definição de pronto: Quando o usuário clicar no botão de ovos de acordo com 
 
 ## 4. Protótipo de baixa fidelidade
 
-![protótipo1](src/IMG_5048.jpg)
-![protótipo2](src/IMG_5051.JPG)
-![protótipo3](src/IMG_5052.jpg)
+![protótipo1](src/images/IMG_5048.jpg)
+![protótipo2](src/images/IMG_5051.JPG)
+![protótipo3](src/images/IMG_5052.jpg)
 
 ## 5. Testes de usabilidade
 
